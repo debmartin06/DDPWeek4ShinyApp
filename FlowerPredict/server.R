@@ -20,24 +20,22 @@ shinyServer(function(input, output) {
     newdata <- data.frame(SL, SW, PL, PW)
     colnames(newdata) <- c('Sepal.Length', 'Sepal.Width', 'Petal.Length', 'Petal.Width')
     prediction <- predict(fit, newdata)
-    speciespred <- colnames(SpeciesPredict)[max.col(SpeciesPredict)]
+    speciespred <- colnames(prediction)[max.col(prediction)]
     speciespred <- paste0(toupper(substr(speciespred, 1, 1)), tolower(substring(speciespred, 2)))
     speciespred
   }
   
   output$SpeciesPredict <- renderText({
-      predictspecies(input$SepalLength, input$SepalWidth, input$PetalLength, input$PetalWidth)
+      paste0(predictspecies(input$SepalLength, input$SepalWidth, input$PetalLength, input$PetalWidth))
     })
   
   output$WidthPlot <- renderPlot({
-    
     qplot(Sepal.Width, Petal.Width, data = iris, col = Species) + 
       geom_vline(aes(xintercept = input$SepalWidth)) + 
       geom_hline(aes(yintercept = input$PetalWidth))
   })
   
   output$LengthPlot <- renderPlot({
-    
     qplot(Sepal.Length, Petal.Length, data = iris, col = Species) +
       geom_vline(aes(xintercept = input$SepalLength)) +
       geom_hline(aes(yintercept = input$PetalLength))
