@@ -1,4 +1,4 @@
-#Developing Data Products Week 4 Project: Shiny App and Presentation
+# Developing Data Products Week 4 Project: Shiny App and Presentation
 
 This app uses the iris dataset, and attempts to predict plant species by using inputs for sepal length, sepal width, petal length, and petal width.
 
