@@ -14,7 +14,7 @@ library(ggplot2)
 
 This app uses the iris dataset, and uses a simple decision tree model to predict plant species based on sepal length, sepal width, petal length, and petal width inputs.
 
-Default values are set to the mean of each variable, with sliders that encompass the variable ranges in the dataset. As the sliders are moved, the model uses teh new inputs to make a prediction, and lines on the graphs move to show where in the population the input values fall.
+Default values are set to the mean of each variable, with sliders that encompass the variable ranges in the dataset. As the sliders are moved, the model uses the new inputs to make a prediction, and lines on the graphs move to show where in the population the input values fall.
 
 ## Dataset Details
 
