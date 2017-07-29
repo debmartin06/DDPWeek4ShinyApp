@@ -1,0 +1,40 @@
+---
+title: "Flower Species Prediction App"
+author: "Deb Martin"
+date: "July 29, 2017"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(ggplot2)
+```
+
+## App Summary
+
+This app uses the iris dataset, and uses a simple decision tree model to predict plant species based on sepal length, sepal width, petal length, and petal width inputs.
+
+Default values are set to the mean of each variable, with sliders that encompass the variable ranges in the dataset. As the sliders are moved, the model uses teh new inputs to make a prediction, and lines on the graphs move to show where in the population the input values fall.
+
+## Dataset Details
+
+Below are the first few rows of the iris dataset.
+
+```{r, echo = TRUE}
+head(iris)
+```
+
+## Length and width Plots
+
+As mentioned in the first slide, there are two plots, which include black lines that change when inputs change. One of the base plots can be seen here:
+
+```{r cars, echo = TRUE, fig.height=3.5, fig.width=7}
+qplot(Sepal.Width, Petal.Width, data = iris, col = Species)
+```
+
+## Reference Links
+The link to the app is here:
+https://debmartin06.shinyapps.io/FlowerPredict/
+
+The link to the github repository with the code is here:
+https://github.com/debmartin06/DDPWeek4ShinyApp

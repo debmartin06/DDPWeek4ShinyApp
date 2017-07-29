@@ -37,10 +37,19 @@ shinyUI(fluidPage(
     
     # Show plots and prediction
     mainPanel(
-      h3("Species Prediction:"), 
-      textOutput("SpeciesPredict"),
-      plotOutput("LengthPlot"),
-      plotOutput("WidthPlot")
+      tabsetPanel(
+        tabPanel("Main",
+          h3("Species Prediction:"), 
+          textOutput("SpeciesPredict"),
+          plotOutput("LengthPlot"),
+          plotOutput("WidthPlot")      
+                 ),
+        tabPanel("Help",
+                 p("This app uses the iris dataset, and attempts to predict plant species by using inputs for sepal length, sepal width, petal length, and petal width."),
+                 p("To begin, simply start changing the sliders on the left navigation bar, and watch as the black lines on the graphs change to show your values. Your species prediction will appear at the top of the screen.")
+                 )
+      )
+      
     )
   )
 ))
