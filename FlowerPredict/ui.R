@@ -1,7 +1,8 @@
 library(shiny)
+library(shinythemes)
 
 # Define UI
-shinyUI(fluidPage(
+shinyUI(fluidPage(theme = shinytheme("united"),
   
   # Application title
   titlePanel("Flower Species Predictor"),
